@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
-  process.env.DATABASE || "postgresql://ericrodgers@localhost/acme_country_club"
+  process.env.DATABASE_URL ||
+    "postgresql://ericrodgers@localhost/acme_country_club"
 );
 
 //

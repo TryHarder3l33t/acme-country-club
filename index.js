@@ -136,9 +136,9 @@ acme_country_club=# select * from bookings;
  f0dcf5a4-0e11-4bfa-bb08-287abf5a5c04 | 2022-02-16 20:37:03.881-05 | 2022-02-16 20:37:03.881-05 | b00e9bd6-cafa-4733-933e-5907db8574c5 | c5c9c3d5-382d-4f6e-b396-e8a0d662c2f9
 */
 
-// app.get("/", (req, res) => {
-//   res.redirect("/api/facilities");
-// });
+app.get("/", (req, res) => {
+  res.redirect("/api/facilities");
+});
 
 // app.get("/api/facilities", async (req, res, next) => {
 //   try {
