@@ -21,7 +21,8 @@ app.listen(PORT, function () {
 //
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
-  process.env.DATABASE || "postgresql://ericrodgers@localhost/acme_country_club"
+  process.env.DATABASE_URL ||
+    "postgresql://ericrodgers@localhost/acme_country_club"
 );
 const sequelizeCheck = () => {
   try {
