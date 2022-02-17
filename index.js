@@ -20,10 +20,19 @@ app.listen(PORT, function () {
 //Sequelize stuff
 //
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize(
-  process.env.DATABASE_URL ||
-    "postgresql://ericrodgers@localhost/acme_country_club"
-);
+//Deployment
+var sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: true,
+  },
+});
+// //development
+// const sequelize = new Sequelize(
+//   process.env.DATABASE_URL ||
+//     "postgresql://ericrodgers@localhost/acme_country_club"
+// );
+
 const sequelizeCheck = () => {
   try {
     sequelize.authenticate();
